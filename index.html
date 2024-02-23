@@ -1,0 +1,26 @@
+<html>
+<head>
+  <title>Meu app em JavaScript</title>
+</head>
+<body>
+  <h1>Abrir CSV: Console.log()</h1>
+  <script>
+    var link = "https://www4.bcb.gov.br/Download/fechamento/20240224.csv";
+
+    function abrirLink() {
+      var agora = Date.now();
+      var hora = new Date(agora).toLocaleTimeString();
+      try {
+        window.open(link, "_blank");
+        console.log(hora + " - Link aberto com sucesso!");
+      } catch (error) {
+        console.log(hora + " - Erro ao abrir o link: " + error);
+      }
+    }
+
+    abrirLink();
+
+    setInterval(abrirLink, 60000);
+  </script>
+</body>
+</html>
